@@ -3,7 +3,6 @@
 valid_input = str()
 x_loc = 1
 y_loc = 1
-lever_tuple = [(1,2),(2,2),(2,3),(3,2)]
 coint_count = 0
 
 
@@ -16,7 +15,7 @@ def lever(coint_count):
             continue
         if lever == 'y':
             coint_count += 1
-            print(f"You received 1 coins, your total is now {coint_count}.")
+            print(f"You received 1 coin, your total is now {coint_count}.")
             break
         elif lever == 'n':
             break
@@ -45,12 +44,12 @@ def current_tile(x_loc, y_loc):
         valid_input = "N"
 
     elif x_loc == 2 and y_loc == 2:
-        pull_lever = lever(total_coins)
+        pull_lever = lever(coint_count)
         print("You can travel: (S)outh or (W)est.")
         valid_input = "S", "W"
 
     elif x_loc == 2 and y_loc == 3:
-        pull_lever = lever(total_coins)
+        pull_lever = lever(coint_count)
         print("You can travel: (E)ast or (W)est.")
         valid_input = "E", "W"
 
@@ -60,7 +59,7 @@ def current_tile(x_loc, y_loc):
         victory = True
 
     elif x_loc == 3 and y_loc == 2:
-        pull_lever = lever(total_coins)
+        pull_lever = lever(coint_count)
         print("You can travel: (N)orth or (S)outh.")
         valid_input = "N", "S"
 
