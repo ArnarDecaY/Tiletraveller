@@ -3,8 +3,21 @@
 valid_input = str()
 x_loc = 1
 y_loc = 1
+lever_tuple = [(1,2),(2,2),(2,3),(3,2)]
 
-def leaver()
+def lever():
+    coint_count = 0
+    lever = input("Pull a lever (y/n): ")
+    if lever == "y" or lever == "Y":
+        coint_count += 1
+        print("You received 1 coin, your total is now.", coint_count)
+    elif lever == "n" or lever == "N":
+        continue
+
+def checking_lever(current_tile):
+    pass
+
+
 
 def current_tile(x_loc, y_loc):
     victory = False
