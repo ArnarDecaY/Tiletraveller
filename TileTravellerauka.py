@@ -21,7 +21,17 @@ def lever(coin_count):
             break
     return coin_count
 
-
+def play_again():
+    ''' Checks whether user would like to play again'''
+    while True:
+        play_again = str(input("Play again (y/n): "))
+        if not play_again in 'yn':
+            print("Invalid input")
+            continue
+        if play_again == 'y':
+            return True
+        elif play_again == 'n':
+            exit()
 
 
 def current_tile(x_loc, y_loc, coin_count):
@@ -54,9 +64,14 @@ def current_tile(x_loc, y_loc, coin_count):
         valid_input = "E", "W"
 
     elif x_loc == 3 and y_loc == 1:
-        print(f"Victory! Total coins {coin_count} ") 
+        print(f"Victory! Total coins {coin_count}.") 
         valid_input = "N"
         victory = True
+        if play_again():
+            victory = False
+            x_loc,y_loc = 1,1
+            coin_count = 0
+            print("You can travel: (N)orth.")
 
     elif x_loc == 3 and y_loc == 2:
         coin_count = lever(coin_count)
