@@ -11,11 +11,6 @@ Moves_counter = 0
 YES = "y"
 NO = "n"
 
-NORTH = "n"
-EAST = "e"
-SOUTH = "s"
-WEST = "w"
-
 
 def lever(coin_count):
     while True:
@@ -77,7 +72,7 @@ def current_tile(x_loc, y_loc):
         valid_input = "E", "W"
 
     elif x_loc == 3 and y_loc == 1:
-        print(f"Victory! Total coins {coin_count}. Moves {Moves_counter}") 
+        print(f"Victory! Total coins {coin_count}. Moves {Moves_counter}.") 
         valid_input = "N"
         victory = True
 
@@ -111,10 +106,11 @@ random.seed(seed)
 
 valid_input, victory = current_tile(position_x, position_y)
 while victory == False:
-    question = random.choice([NORTH, EAST, SOUTH, WEST])
+    question = random.choice(["n", "e", "s", "w"])
     print(f"Direction: {question}")
     question = question.upper()
     if question not in valid_input:
+        Moves_counter += 1
         print("Not a valid direction!")
         valid_input, victory = current_tile(position_x, position_y)
 
